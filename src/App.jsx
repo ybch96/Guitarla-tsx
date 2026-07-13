@@ -14,11 +14,11 @@ function App() {
     if (itenExits >= 0) {
       console.log("Si estaba en el carrito");
       const updateCart = [...cart]
-      updateCart[itenExits].quantify++
+      updateCart[itenExits].quantity++
       setCart(updateCart);
     } else {
       console.log("No estaba en el carrito");
-      iten.quantify = 1
+      iten.quantity = 1
       setCart([...cart, iten]);
     }
   };
