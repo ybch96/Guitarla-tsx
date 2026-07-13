@@ -1,4 +1,4 @@
-export default function Header({ cart }) {
+export default function Header({ cart, removeItenFronCart }) {
   // state derivado
   const isEmpty = () => cart.length > 0;
   const cartTotal = () => cart.reduce((total, iten) => total + (iten.quantity * iten.price),0)
@@ -53,13 +53,13 @@ export default function Header({ cart }) {
                               <button type="button" className="btn btn-dark">
                                 -
                               </button>
-                              {iten.quantify}
+                              {iten.quantity}
                               <button type="button" className="btn btn-dark">
                                 +
                               </button>
                             </td>
                             <td>
-                              <button className="btn btn-danger" type="button">
+                              <button className="btn btn-danger" type="button" onClick={() => removeItenFronCart(iten.id)}>
                                 X
                               </button>
                             </td>

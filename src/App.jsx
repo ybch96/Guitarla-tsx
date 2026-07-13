@@ -22,12 +22,16 @@ function App() {
       setCart([...cart, iten]);
     }
   };
-  console.log(cart);
+
+  const removeItenFronCart = (id) => {
+    setCart(cart.filter(iten => iten.id !== id))
+  }
  
   return (
     <>
     <Header 
-    cart={cart}
+    cart={cart} 
+    removeItenFronCart={removeItenFronCart}
     />
       <main className="container-xl mt-5">
         <h2 className="text-center">Nuestra Colección</h2>
